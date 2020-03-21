@@ -1,39 +1,90 @@
-<!-- Tampilkan halaman Dashboard -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="<?php echo base_url();?>/assets/images/Logo PIO.png">
 
-    <title>Administrator PIORA</title>
-    <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url();?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <!-- Custom styles for this template -->
-    <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
+  <title>Dashboard Admin</title>
 
-    <!-- font-awesome untuk ikon -->
-    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-  </head>
+  <!-- Bootstrap core CSS -->
+  <link href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <body>
+  <!-- Custom styles for this template -->
+  <link href="<?php echo base_url();?>assets/bootstrap/css/simple-sidebar.css" rel="stylesheet">
+  
+  <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
-    <nav><?php include 'template/navbar.php'; ?></nav>
+  <link href="<?php echo base_url();?>/assets/styles/header-admin.css" rel="stylesheet">
 
-    <div class="container-fluid">
-      <div class="row">
-          <aside>
-              <?php $home = "class='active'"; ?>
-              <?php include 'template/sidebar.php'; ?>
-          </aside>
+  <link href="<?php echo base_url();?>/assets/styles/dashboard-icon.css" rel="stylesheet">
 
-          <section id="konten">
-          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<link href="<?php echo base_url();?>/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+
+
+</head>
+
+<body>
+
+
+<div class="header_top_content d-flex flex-row align-items-center justify-content-start"> 
+									<div class="logo"> 
+										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span><sup>+</sup></span></a>	 
+									</div> 
+								</div> 
+  <div class="d-flex " id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-secondary border-right text-light " id="sidebar-wrapper">
+    <div class="make-me-sticky">
+      <div class="sidebar-heading text-light bg-dark">Main Menu </div>
+      <div class="list-group list-group-flush text-light bg-secondary">
+        <a href="<?php echo base_url();?>admin/dashboard" class="list-group-item list-group-item-action text-light bg-secondary"><i class="fa fa-home fa-lg"></i> Dashboard</a>
+        <a href="<?php echo base_url();?>admin/artikel" class="list-group-item list-group-item-action text-light bg-secondary"><i class="fa fa-newspaper-o fa-lg"></i> Artikel</a>
+        <a href="<?php echo base_url();?>admin/obat" class="list-group-item list-group-item-action text-light bg-secondary"><i class="fa fa-th-list fa-lg"></i> Obat</a>
+        <a href="<?php echo base_url();?>admin/info" class="list-group-item list-group-item-action text-light bg-secondary"><i class="fa fa-users fa-lg"></i> Info Admin</a>
+      
+      </div>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+
+
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-info border-bottom">
+        <button class="btn btn-primary" id="menu-toggle"><</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-light bg-info" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0 " >
+            <li class="nav-item active ">
+              <a class="nav-link text-light" href="<?php echo site_url('Welcome'); ?>">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Settings
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Account Information</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+      <div class="col-lg-12 col-sm-offset-3 col-md-10 col-md-offset-2 main">
   <h1 class="page-header">Halo <?php echo $this->session->userdata("nama"); ?></h1>
   <div class="container text-center text-white">
   <div class="row justify-content-start">
@@ -48,34 +99,48 @@
           &nbsp;
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-4 bg-white">
-          &nbsp;
-          &nbsp;
-          </div>
-          <div class="col-4 bg-white">
-          &nbsp;
-          &nbsp;
-          </div>
-        </div>
-  <div class="row justify-content-end">
-          <div class="col-4 bg-white">
-            <h1>PUSAT INFOMASI OBAT</h1>
-            <H2>KLINIK INSTITUT TEKNOLOGI SUMATERA</H2>
-            <H3>PROGRAM STUDI FARMASI</H3>
-          </div>
-  </div>
+    
 
-          </section>
 
-      </div>
+
+  <h2 style=" text-align:center; color:black; margin-top:20px;"> SELAMAT DATANG DI HALAMAN ADMIN PIORA </h2>
+  <h3 style=" text-align:center; color:black; margin-top:30px; margin-bottom:200px;"> PILIH HALAMAN YANG ANDA INGINKAN </h3>
+
+    <div class="icon-wrapper">
+
+          <ul> 
+          <li><a href="<?php echo base_url();?>admin/artikel"><i class="fa fa-newspaper-o fa-lg"></i></a> </li>
+          <li><a href="<?php echo base_url();?>admin/obat"><i class="fa fa-th-list fa-lg"></i></a> </li>
+          <li><a href="<?php echo base_url();?>admin/info"><i class="fa fa-users fa-lg"></i></a> </li>
+
+
+          </ul>
+
+
+
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo base_url();?>/assets/bootstrap/js/jquery.js"></script>
-    <script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url();?>/assets/bootstrap/js/holder.js"></script>
-  </body>
+
+ 
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
+  <script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
 </html>
