@@ -31,17 +31,14 @@
 				<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-				<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Keluhan'); ?>">Drug interaction checker</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 			</ul>
 		</div>
 		<div class="menu_social">
 			<ul>
-				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
 				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 			</ul>
 		</div>
@@ -62,7 +59,7 @@
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 									<div class="logo">
-										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
+										<a href="<?php echo site_url('Welcome'); ?>">PIORA<sup>+</sup></a>	
 									</div>
 									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 								</div>
@@ -82,7 +79,7 @@
 													<li class="active"><a href="<?php echo site_url('index'); ?>">Home</a></li>
 													<li><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
 													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-													<li><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+													<li><a href="<?php echo site_url('Keluhan'); ?>">Drug interaction checker</a></li>
 													<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 												</ul>
 											</nav>
@@ -132,7 +129,7 @@
 							$gambar=$key['gambar'];
 							?>
 							<div class="news_post">
-							<div class="news_post_image"><img src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""> </div>
+							<div class="news_post_image"><img height="220px" width="360px" src="<?php echo base_url('assets/images/posts/' . $gambar);?>" alt=""> </div>
 							<div class="news_post_content">
 								<div class="news_post_title"><a><?php echo $judul ?></a></div>
 								<div class="news_post_date"><a href=""><?php echo $create_at ?></a></div>								
