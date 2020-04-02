@@ -31,7 +31,7 @@
 					<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 				</form>
 				<ul>
-					<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('index'); ?>">Home</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('Artikel'); ?>">Artikel</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
@@ -193,7 +193,7 @@
 					<div class="col-lg-3 footer_col">
 						<div class="footer_about">
 							<div class="logo">
-								<a href="<?php echo site_url('Welcome'); ?>">PIORA<sup>+</sup></a>
+								<a href="<?php echo site_url('index'); ?>">PIORA<sup>+</sup></a>
 							</div>
 							<div class="footer_about_text">Pusat Informasi Obat ITERA.</div>
 							<div class="footer_social">

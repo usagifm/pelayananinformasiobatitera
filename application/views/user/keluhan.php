@@ -34,7 +34,7 @@
 					<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 				</form>
 				<ul>
-					<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('index'); ?>">Home</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
@@ -68,7 +68,7 @@
 								<div class="col">
 									<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 										<div class="logo">
-											<a href="<?php echo site_url('Welcome'); ?>" style="color:black;">PIORA<span><sup>+</sup></span></a>
+											<a href="<?php echo site_url('index'); ?>" style="color:black;">PIORA<span><sup>+</sup></span></a>
 										</div>
 										<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 									</div>
@@ -241,7 +241,7 @@
 						<div class="col-lg-3 footer_col">
 							<div class="footer_about">
 								<div class="logo">
-									<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>
+									<a href="<?php echo site_url('index'); ?>">PIORA<span>+</span></a>
 								</div>
 								<div class="footer_about_text">Pusat Informasi Obat ITERA.</div>
 								<div class="footer_social">

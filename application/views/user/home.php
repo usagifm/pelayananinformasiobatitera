@@ -34,12 +34,19 @@
 					<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 				</form>
 				<ul>
-					<li class="menu_item"><a href="<?php echo site_url('Home'); ?>">Home</a></li>
+					<li class="menu_item"><a href="<?php echo site_url('index'); ?>">Home</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('obat'); ?>">Obat</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('Keluhan'); ?>">Drug interaction checker</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
+
+
+
+
+					
 				</ul>
+
+
 			</div>
 			<div class="menu_social">
 				<ul>
@@ -104,7 +111,7 @@
 						<div class="col">
 							<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 								<div class="logo">
-									<a href="<?php echo site_url('Welcome'); ?>">PIORA<span><sup>+</sup></span></a>
+									<a href="<?php echo site_url('index'); ?>">PIORA<span><sup>+</sup></span></a>
 								</div>
 								<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 							</div>
@@ -128,7 +135,7 @@
 												<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 											</ul>
 										</nav>
-										<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
+										<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto" >
 											<form action="#" id="search_container_form" class="search_container_form">
 												<input type="text" class="search_container_input" placeholder="cari obat" required="required">
 												<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -145,13 +152,13 @@
 	</header>
 
 
-	<div class="home_container">
-		<div class="container">
-			<div class="row">
+	<div class="home_container" >
+		<div class="container"style="left:6%; margin-top:60px;"  >
+			<div class="row ">
 				<div class="col">
-					<div class="home_content">
-						<div class="home_title">Institut Teknologi Sumatera</div>
-						<div class="home_text">Pusat Informasi Obat ITERA.</div>
+					<div class="home_content" >
+						<div class="home_title" style="font-size:40px">Pusat Informasi Obat ITERA</div>
+						<div class="home_text">Institut Teknologi Sumatera</div>
 					</div>
 				</div>
 			</div>
@@ -179,7 +186,7 @@
 					<!-- Info Box -->
 					<div class="col-lg-4 info_box_col">
 						<div class="info_box">
-							<div class="info_image"><img height="132px" width="360px" src="<?php echo base_url() . 'assets/images/posts/' . $gambar; ?>" alt=""></div>
+							<div class="info_image"><img height="220px" width="100%" src="<?php echo base_url() . 'assets/images/posts/' . $gambar; ?>" alt=""></div>
 							<div class="info_content">
 								<div class="info_title"><?php echo $judul; ?></div>
 								<div class="info_text"><?php echo word_limiter($body, 10); ?></div>
@@ -192,6 +199,30 @@
 			</div>
 		</div>
 	</div>
+
+
+	<!-- CTA --> 				
+
+	<div class="cta"> 
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url();?>/assets/images/cta_1.jpg" data-speed="0.8"></div> 
+		<div class="container"> 
+			<div class="row"> 
+				<div class="col"> 
+					<div class="cta_container d-flex flex-xl-row flex-column align-items-xl-start align-items-center justify-content-xl-start justify-content-center"> 
+						<div class="cta_content text-xl-left text-center"> 
+							<div class="cta_title">Cek interaksi antar obat anda</div> 
+							<div class="cta_subtitle">Pastikan tidak ada efek samping pada pemakaianya.</div> 
+						</div> 
+						<div class="button cta_button ml-xl-auto" style="width:330px;"><a href="<?php echo site_url('keluhan'); ?>"><span >Drug Interaction Checker</span><span>Gunakan</span></a></div> 
+					</div> 
+				</div> 
+			</div> 
+		</div> 
+	</div> 
+ 
+
+
+
 	<!-- FAQ & News -->
 
 	<div class="stuff">

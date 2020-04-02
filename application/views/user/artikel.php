@@ -31,7 +31,7 @@
 					<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 				</form>
 				<ul>
-					<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('index'); ?>">Home</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('Artikel'); ?>">Artikel</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('Keluhan'); ?>">Drug interaction checker</a></li>
@@ -64,7 +64,7 @@
 								<div class="col">
 									<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 										<div class="logo">
-											<a href="<?php echo site_url('Welcome'); ?>" style="color:black;">PIORA<span><sup>+</sup></span></a>
+											<a href="<?php echo site_url('index'); ?>" style="color:black;">PIORA<span><sup>+</sup></span></a>
 										</div>
 										<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 									</div>
@@ -88,12 +88,12 @@
 														<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 													</ul>
 												</nav>
-												<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
-													<form action="#" id="search_container_form" class="search_container_form">
-														<input type="text" class="search_container_input" placeholder="cari obat" required="required">
-														<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-													</form>
-												</div>
+												<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto" > 
+											<form action="#" id="search_container_form" class="search_container_form">
+												<input type="text" class="search_container_input" placeholder="cari obat" required="required" style="border-radius:20px;">
+												<button class="search_container_button" style="border-radius:20px;"><i class="fa fa-search" aria-hidden="true" ></i></button>
+											</form>
+										</div>
 											</div>
 										</div>
 									</div>
@@ -135,10 +135,13 @@
 								$id_artikel = $br['id_artikel'];
 								$kategori = $br['kategori'];
 								$create_at = $br['create_at'];
+
+							
 							?>
 
 								<div class="news_post">
-									<div class="news_post_image"><img height="220px" width="360px" src="<?php echo base_url('assets/images/posts/' . $gambar); ?> /<?php echo $slug; ?>"></div>
+									
+									<div class="news_post_image"><img height="420px" width="700px" src="<?php echo base_url('assets/images/posts/' . $gambar);?>" alt=""></div>
 
 									<div class="news_post_content">
 										<div class="news_post_date"><a href="#">
