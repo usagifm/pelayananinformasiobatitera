@@ -31,6 +31,8 @@
 2. Body and some general stuff
 *********************************/
 
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -38,6 +40,33 @@
 	-webkit-text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 	text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 }
+
+
+.form-group{
+
+}
+
+.form-group label{
+
+	font-weight: 900;
+	font-style: italic;
+
+}
+
+	.gol-obat{
+		left: 90%;
+		margin-top:-30px;
+		margin-bottom: 20px;
+
+}
+
+	.gol-obat img{
+
+		width: 80px;
+		height: 80px;
+
+	}
+
 
 body {
 	font-family: 'Montserrat', sans-serif;
@@ -832,7 +861,16 @@ section {
 
 .home {
 	width: 100%;
+
 	height: 874px;
+}
+
+.home-read-obat
+{
+	width: 100%;
+	margin-bottom: 80px;
+	max-height: 100%;
+	padding-bottom: 70px;
 }
 
 .home_container {
@@ -840,12 +878,14 @@ section {
 	top: 38%;
 	left: 0;
 	width: 100%;
+	
 }
 
-.home_content {}
+.home_content { }
 
 .home_title {
-	font-size: 60px;
+	
+	font-size: 40px;
 	font-weight: 600;
 	color: #FFFFFF;
 	max-width: 570px;
@@ -1300,7 +1340,7 @@ section {
 }
 
 .accordion div {
-	max-width: 90%;
+	width: 100%;
 	overflow: hidden;
 	white-space: nowrap;
 }
@@ -1348,7 +1388,8 @@ section {
 }
 
 .accordion_panel {
-	padding-right: 8px;
+	
+
 	max-height: 0px;
 	overflow: hidden;
 	-webkit-transition: all 500ms ease;
@@ -1358,8 +1399,57 @@ section {
 	transition: all 500ms ease;
 }
 
+.accordion_panel ul{
+
+width: 100%;
+}
+
+.accordion_panel ul li { 
+	
+	width: 100%;	
+	background-color: #f0f1f1;
+	border-bottom: 1px solid #92929273;
+}
+
+
+.accordion_panel ul li:hover { 
+	
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+
+
+
+	border-bottom: 1px solid #929292;
+
+	background-color: #9e9e9e;
+	border-bottom: 1px solid #929292;
+}
+
+.accordion_panel ul li a{
+	margin-left: 10px;
+	display: block;
+	padding: 9px;
+
+	width: 100%;
+
+	color: #464646;
+
+}
+
+.accordion_panel ul li a:hover{
+
+	color: #dadada;
+
+}
+
+
 .accordion_panel>div {
-	padding-bottom: 11px;
+
+	margin-bottom: 11px;
+
 }
 
 .accordion_panel p {
@@ -1478,10 +1568,13 @@ section {
 *********************************/
 
 .footer {
+	
 	display: block;
 	position: relative;
 	width: 100%;
 	padding-top: 64px;
+
+
 }
 
 .footer_content {
