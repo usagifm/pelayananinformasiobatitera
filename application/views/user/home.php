@@ -7,9 +7,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Health medical template project">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/styles/bootstrap4/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/styles/bootstrap4/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/js/jquery-3.3.1.min.js">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/js/script.js">
 	<link href="<?php echo base_url(); ?>/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
@@ -29,17 +32,19 @@
 				<div class="menu_close_container">
 					<div class="menu_close"></div>
 				</div>
-				<form action="#" class="menu_search_form">
-					<input type="text" class="menu_search_input" placeholder="Search" required="required">
-					<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-				</form>
+				<form action="<?php echo base_url('Welcome/hasil')?>" action="GET" id="search_container_form" class="search_container_form">
+				<input type="text" class="search_container_input" placeholder="cari obat" required="required">
+												<button  class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+													</form>
+													
+
 				<ul>
 					<li class="menu_item"><a href="<?php echo site_url('index'); ?>">Home</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
-					<li class="menu_item"><a href="<?php echo site_url('obat'); ?>">Obat</a></li>
-					<li class="menu_item"><a href="<?php echo site_url('Keluhan'); ?>">Drug interaction checker</a></li>
+					<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+					<li class="menu_item"><a href="<?php echo site_url('dic'); ?>">Drug interaction checker</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
-
+					
 
 
 
@@ -60,7 +65,7 @@
 
 		<!-- Home -->
 
-		<div class="home" style="height:700px">
+		<div class="home" style="height:700px width:100%; margin-bottom:-250px;">
 
 			<div id="demo" class="carousel slide col-md-30" data-ride="carousel" style="margin-top:60px;">
 				<ul class="carousel-indicators" style="margin-top:300px">
@@ -69,7 +74,7 @@
 					<li data-target="#demo" data-slide-to="2"></li>
 				</ul>
 				<!-- Ganti gambar dengan file gambar kalian -->
-				<div class="carousel-inner" style="width:1366px">
+				<div class="carousel-inner" style="width:100%; ">
 					<div class="carousel-item active">
 						<img class="d-block w-100" src="assets/images/1.jpg" height="597">
 					</div>
@@ -128,18 +133,19 @@
 									<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 										<nav class="main_nav">
 											<ul class="d-flex flex-row align-items-center justify-content-start">
-												<li class="active"><a href="<?php echo site_url('index'); ?>">Home</a></li>
+												<li><a href="<?php echo site_url('index'); ?>">Home</a></li>
 												<li><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
 												<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-												<li><a href="<?php echo site_url('keluhan'); ?>">Drug Interaction Checker</a></li>
+												<li><a href="<?php echo site_url('dic'); ?>">Drug Interaction Checker</a></li>
 												<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
+								
 											</ul>
 										</nav>
 										<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto" >
-											<form action="#" id="search_container_form" class="search_container_form">
-												<input type="text" class="search_container_input" placeholder="cari obat" required="required">
-												<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-											</form>
+										<form action="<?php echo base_url('Welcome/hasil')?>" action="GET" id="search_container_form" class="search_container_form">
+										<input id="textbox" name='cari' type="text" class="search_container_input" placeholder="cari obat" required="required">
+												<button id="start-btn" class="search_container_button"><i class="fa fa-microphone" aria-hidden="true"></i></button>
+													</form>
 										</div>
 									</div>
 								</div>
@@ -157,7 +163,7 @@
 			<div class="row ">
 				<div class="col">
 					<div class="home_content" >
-						<div class="home_title" style="font-size:40px">Pusat Informasi Obat ITERA</div>
+						<div class="home_title" >Pusat Informasi Obat ITERA</div>
 						<div class="home_text">Institut Teknologi Sumatera</div>
 					</div>
 				</div>
@@ -166,10 +172,15 @@
 	</div>
 	</div>
 
+
+	
 	<!-- Info Boxes -->
 
 	<div class="info">
+
 		<div class="container">
+		<div class="faq_title" style="margin-bottom:60px;">Artikel Pilihan</div>
+		<br>
 			<div class="row row-eq-height">
 
 				<?php $i = 0 ?>
@@ -210,10 +221,10 @@
 				<div class="col"> 
 					<div class="cta_container d-flex flex-xl-row flex-column align-items-xl-start align-items-center justify-content-xl-start justify-content-center"> 
 						<div class="cta_content text-xl-left text-center"> 
-							<div class="cta_title">Cek interaksi antar obat anda</div> 
-							<div class="cta_subtitle">Pastikan tidak ada efek samping pada pemakaianya.</div> 
+							<div class="cta_title">Cek data terkini mengenai virus Covid-19</div> 
+							<div class="cta_subtitle">Data secara nasioanal maupun internasional</div> 
 						</div> 
-						<div class="button cta_button ml-xl-auto" style="width:330px;"><a href="<?php echo site_url('keluhan'); ?>"><span >Drug Interaction Checker</span><span>Gunakan</span></a></div> 
+						<div class="button cta_button ml-xl-auto" style="width:330px;"><a href="<?php echo site_url('corona'); ?>"><span >Data Covid-19</span><span>Lihat</span></a></div> 
 					</div> 
 				</div> 
 			</div> 
@@ -375,6 +386,10 @@
 	<script src="<?php echo base_url(); ?>/assets/plugins/easing/easing.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/plugins/parallax-js-master/parallax.min.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/js/custom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="<?php echo base_url(); ?>/assets/js/script.js"></script>
+
+		
 </body>
 
 </html>

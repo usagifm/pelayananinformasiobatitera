@@ -26,17 +26,17 @@
 				<div class="menu_close_container">
 					<div class="menu_close"></div>
 				</div>
-				<form action="#" class="menu_search_form">
-					<input type="text" class="menu_search_input" placeholder="Search" required="required">
-					<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-				</form>
+				<form action="<?php echo base_url('Welcome/hasil')?>" action="GET" id="search_container_form" class="search_container_form">
+				<input type="text" name="cari" class="search_container_input" placeholder="cari obat" required="required">
+												<button  class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+													</form>
 				<ul>
 				<li class="menu_item"><a href="<?php echo site_url('index'); ?>">Home</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('Artikel'); ?>">Artikel</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-					<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+					<li class="menu_item"><a href="<?php echo site_url('dic'); ?>">Drug Interaction Checker</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
-				</ul>
+						</ul>
 			</div>
 			<div class="menu_social">
 				<ul>
@@ -87,17 +87,17 @@
 											<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 												<nav class="main_nav">
 													<ul class="d-flex flex-row align-items-center justify-content-start">
-														<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
+														<li><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
 														<li><a href="<?php echo site_url('Artikel'); ?>">Artikel</a></li>
 														<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-														<li><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+														<li><a href="<?php echo site_url('dic'); ?>">Drug-interaction-Checker</a></li>
 														<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
-													</ul>
+															</ul>
 												</nav>
 												<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
-													<form action="#" id="search_container_form" class="search_container_form">
-														<input type="text" class="search_container_input" placeholder="Cari" required="required">
-														<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+												<form action="<?php echo base_url('Welcome/hasil')?>" action="GET" id="search_container_form" class="search_container_form">
+										<input id="textbox" name="cari" type="text" class="search_container_input" placeholder="cari obat" required="required">
+												<button id="start-btn" class="search_container_button"><i class="fa fa-microphone" aria-hidden="true"></i></button>
 													</form>
 												</div>
 											</div>
@@ -224,6 +224,8 @@
 	<script src="<?php echo base_url(); ?>/assets/plugins/easing/easing.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/plugins/parallax-js-master/parallax.min.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/js/custom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="<?php echo base_url(); ?>/assets/js/script.js"></script>
 </body>
 
 </html>

@@ -7,13 +7,25 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Health medical template project">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/styles/bootstrap4/bootstrap.min.css">
-	<link href="<?php echo base_url(); ?>assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+
+
+    
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css">
+
+  <link href="<?php echo base_url(); ?>/assets/css/addons/datatables.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/styles/bootstrap4/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/styles/main_styles.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/styles/responsive.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/styles/responsive.css">
 </head>
 
 <body>
@@ -35,7 +47,6 @@
 					<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('dic'); ?>">Drug interaction checker</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
-				
 				</ul>
 			</div>
 			<div class="menu_social">
@@ -83,7 +94,7 @@
 														<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
 														<li><a href="<?php echo site_url('dic'); ?>">Drug Interaction Checker</a></li>
 														<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
-														</ul>
+															</ul>
 												</nav>
 												<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
 												<form action="<?php echo base_url('Welcome/hasil')?>" action="GET" id="search_container_form" class="search_container_form">
@@ -120,61 +131,64 @@
 
 
 
+		
 
 
 		<!-- DaftarObat -->
 
 		<div class="stuff">
 			<div class="container">
+
+			
 				<div class="row">
-					<?php
-					foreach ($data as $colNum => $col) {
-					?>
-						<div class="col-lg-<?php echo round(12 / count($data)); ?>">
-							<div class="daftarobat">
-								<div class="faq_title"><?php if ($colNum == 0) {
-															echo "Daftar Obat";
-														} else {
-															echo "<br>";
-														} ?></div>
-								<div class="elements_accordions">
-									<div class="accordions">
-										<div class="accordion_container">
 
-											<?php
-											foreach ($col as $key => $value) {
-											?>
-												<div class="accordion d-flex flex-row align-items-center deactive">
-													<div> <?php echo $key; ?> </div>
-												</div>
-												<div class="accordion_panel">
-													<div>
+			
+				<table id="dtBasicExample" class="table table-hover table-striped table-dark table-bordered table-sm" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th >NO
+      </th>
+      <th >Nama Generik
 
-													<ul>
-														<?php
-														foreach ($value as $row) {
-														?>
-															<li>
-															<a href="<?php echo base_url("keterangan/obat/" . $row['id']); ?>" target="_blank"><?php echo $row['nama']; ?></a>
-														</li>
-														<?php
-														}
-														?>
+      </th>
+      <th >Merek Dagang
+      </th>
+      <th>Golongan Obat
 
-													</ul>
-													</div>
-												</div>
-											<?php
-											}
-											?>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					<?php
-					}
-					?>
+</th>
+
+    </tr>
+  </thead>
+  <tbody>
+                <?php
+                if(count($cari)>0){
+
+$count =1;
+foreach ($cari as $data) {
+
+    ?>
+    <tr>
+    <th scope="row"><?php echo $count?></th>
+    <td> <a style="color:white;" href="<?php echo base_url(); ?>/keterangan/obat/<?php echo $data->id_obat ?> "><?php echo $data->nama_generik?></a></td>
+    <td><?php echo $data->merek_dagang?></td>
+    <td><?php echo $data->golongan_obat?></td>
+  </tr>
+<?php
+
+$count++;
+}
+
+}else
+{
+echo "Data tidak ditemukan";
+}
+
+?>
+
+</tbody>
+</table>
+
+
 				</div>
 			</div>
 		</div>
@@ -214,17 +228,34 @@
 				</div>
 		</footer>
 
-	</div>
+    </div>
 
 	<script src="<?php echo base_url(); ?>/assets/js/jquery-3.3.1.min.js"></script>
-	<script src="<?php echo base_url(); ?>/assets/styles/bootstrap4/popper.js"></script>
-	<script src="<?php echo base_url(); ?>/assets/styles/bootstrap4/bootstrap.min.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/plugins/easing/easing.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/plugins/parallax-js-master/parallax.min.js"></script>
-	<script src="<?php echo base_url(); ?>/assets/js/custom.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/custom.js"></script>
+    
+        
+      <!-- jQuery -->
+  <script type="text/javascript" src="<?php echo base_url(); ?>/assets/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="<?php echo base_url(); ?>/assets/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="<?php echo base_url(); ?>/assets/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript">$(document).ready(function () {
+    $('#dtBasicExample').DataTable();
+    $('.dataTables_length').addClass('bs-select');
+  });</script>
+
+  <!-- MDBootstrap Datatables  -->
+<script type="text/javascript" src="<?php echo base_url(); ?>/assets/js/addons/datatables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/js/script.js"></script>
+
 </body>
 
 </html>

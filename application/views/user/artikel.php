@@ -26,17 +26,13 @@
 				<div class="menu_close_container">
 					<div class="menu_close"></div>
 				</div>
-				<form action="#" class="menu_search_form">
-					<input type="text" class="menu_search_input" placeholder="Search" required="required">
-					<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-				</form>
+				
 				<ul>
 				<li class="menu_item"><a href="<?php echo site_url('index'); ?>">Home</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('Artikel'); ?>">Artikel</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-					<li class="menu_item"><a href="<?php echo site_url('Keluhan'); ?>">Drug interaction checker</a></li>
+					<li class="menu_item"><a href="<?php echo site_url('dic'); ?>">Drug interaction checker</a></li>
 					<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
-
 				</ul>
 			</div>
 			<div class="menu_social">
@@ -81,18 +77,15 @@
 											<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 												<nav class="main_nav">
 													<ul class="d-flex flex-row align-items-center justify-content-start">
-														<li class="active"><a href="<?php echo site_url('index'); ?>">Home</a></li>
+														<li ><a href="<?php echo site_url('index'); ?>">Home</a></li>
 														<li><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
 														<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-														<li><a href="<?php echo site_url('keluhan'); ?>">Drug Interaction Checker</a></li>
+														<li><a href="<?php echo site_url('dic'); ?>">Drug Interaction Checker</a></li>
 														<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 													</ul>
 												</nav>
 												<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto" > 
-											<form action="#" id="search_container_form" class="search_container_form">
-												<input type="text" class="search_container_input" placeholder="cari obat" required="required" style="border-radius:20px;">
-												<button class="search_container_button" style="border-radius:20px;"><i class="fa fa-search" aria-hidden="true" ></i></button>
-											</form>
+										
 										</div>
 											</div>
 										</div>
@@ -135,8 +128,6 @@
 								$id_artikel = $br['id_artikel'];
 								$kategori = $br['kategori'];
 								$create_at = $br['create_at'];
-
-							
 							?>
 
 								<div class="news_post">
