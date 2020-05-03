@@ -1,6 +1,8 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
 
-class Admin_obat extends CI_Controller {
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class dic extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,27 +19,10 @@ class Admin_obat extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	function __construct(){
-		parent::__construct();
-		if($this->session->userdata('status') != "login"){
-            $url=base_url('admin');
-            redirect($url);
-        };
-	}
-
 	public function index()
 	{
-		$x['data']=$this->obat_model->get_all_obat();
-		$this->load->view('admin/obat/list', $x);
+		$this->load->view('user/drug-interaction-checker');
 
 	}
 
-	public function add(){
-		$this->load->view('admin/obat/add');
-
-	}
-
-
-
-	
 }

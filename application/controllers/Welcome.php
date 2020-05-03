@@ -67,4 +67,22 @@ class Welcome extends CI_Controller {
 		$this->load->view('user/faq');
 
 	}
+
+
+	public function cari() 
+
+	{
+		$this->load->model("Obat_model");
+		$this->load->view('user/obat');
+	}
+ 
+	public function hasil()
+	{
+		$this->load->model("Obat_model");
+		$data2['cari'] = $this->obat_model->cariOrang();
+		$this->load->view('user/result', $data2);
+	}
+
+
+
 }
