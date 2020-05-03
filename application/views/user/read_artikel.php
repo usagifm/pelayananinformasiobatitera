@@ -121,9 +121,13 @@
 							$judul=$key['judul'];
 							$create_at=$key['create_at'];
 							$body=$key['body'];
-
 							$pecah = explode("\r\n\r\n", $body);
 							$text = "";
+							$gambar=$key['gambar'];
+
+							?>
+
+							<?php
 
 							for ($i=0; $i<=count($pecah)-1; $i++)
 								{
@@ -131,10 +135,12 @@
   								 $text .= $part;
 									}
 
-							$gambar=$key['gambar'];
-
+							
+										echo $gambar;
 
 							?>
+
+							
 							<div class="news_post">
 							<div class="news_post_image"><img height="420px" width="700px" src="<?php echo base_url('assets/images/posts/' . $gambar);?>" alt=""> </div>
 								
@@ -149,7 +155,7 @@
 							</div>
 						</div>
 
-						<? php endforeach ?>
+						
 						
 						<!-- News Post -->
 						

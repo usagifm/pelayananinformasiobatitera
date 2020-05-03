@@ -247,35 +247,36 @@
 						<div class="elements_accordions">
 							<div class="accordions">
 
-								<div class="accordion_container">
+								
+							<div class="accordion_container">
 									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div>Bagaimana cara mendapatkan informasi suatu penyakit ?</div>
+										<div>Apa itu PIORA ?</div>
 									</div>
 									<div class="accordion_panel">
 										<div>
-											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
+											<p>PIORA adalah akronim dari Pusat Informasi Obat ITERA yang memiliki fungsi sebagai sarana penyedia informasi dan edukasi kepada sivitas akademik ITERA terkait dengan jenis-jenis obat generic secara umum serta indikasi obat tersebut. </p>
 										</div>
 									</div>
 								</div>
 
 								<div class="accordion_container">
 									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div>
+										<div>Apa saja fitur utama yang dapat digunakan ?</div>
 									</div>
 									<div class="accordion_panel">
 										<div>
-											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
+											<p>Fitur utama PIORA meliputi informasi terkait artikel-artikel kesehatan, informasi obat-obatan generic yang dijual bebas di pasaran, serta drug interaction checker yang diinputkan oleh user.</p>
 										</div>
 									</div>
 								</div>
 
 								<div class="accordion_container">
 									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div>
+										<div>Apakah seorang user dapat memberikan informasi tambahan pada fitur artikel ?</div>
 									</div>
 									<div class="accordion_panel">
 										<div>
-											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
+											<p>Hal ini dapat dimungkinkan, namun tidak serta merta secara langsung user dapat menambahkan informasi pada artikel. Jika user memang memiliki informasi penting yang ingin dibagikan pada fitur artikel, langkah yang harus dilakukan adalah dengan menghubungi admin PIORA. Nantinya admin yang akan melakukan verifikasi terhadap kebenaran informasi tersebut, lalu bertugas menambahkannya ke dalam artikel. </p>
 										</div>
 									</div>
 								</div>
@@ -293,35 +294,36 @@
 						<div class="elements_accordions">
 							<div class="accordions">
 
-								<div class="accordion_container">
+							<div class="accordion_container">
 									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div>Bagaimana cara mendapatkan informasi suatu penyakit ?</div>
+										<div>Apakah seorang user dapat memberikan informasi tambahan pada fitur obat ?</div>
 									</div>
 									<div class="accordion_panel">
 										<div>
-											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
+											<p>Tidak. Mengingat informasi tentang obat-obatan yang tertera di PIORA haruslah informasi yang akurat dan dapat dipertanggungjawabkan, maka yang memiliki hak untuk menambahkan atau mengedit informasi pada fitur obat hanyalah admin. Jika memang user memiliki informasi tambahan lain terkait obat-obatan, maka dapat menghubungi admin secara langsung. Namun perihal informasi tersebut dapat dipublikasikan atau tidaknya, tetap bergantung dari hasil verifikasi data yang dilakukan oleh admin. </p>
 										</div>
 									</div>
 								</div>
 
 								<div class="accordion_container">
 									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div>
+										<div>Apakah hasil Drug Interaction Checker akurat 100% ?</div>
 									</div>
 									<div class="accordion_panel">
 										<div>
-											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
+											<p>Fitur Drug Interaction Checker mengambil data dari DrugBank , maka data nya sangat akurat.</p>
 										</div>
 									</div>
 								</div>
 
+						
 								<div class="accordion_container">
 									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div>
+										<div>Bagaimana cara menghubungi admin PIORA ?</div>
 									</div>
 									<div class="accordion_panel">
 										<div>
-											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
+											<p>User dapat datang langsung ke Poliklinik ITERA dan menanyakan kepada petugas yang sedang berjaga di tempat, terkait admin PIORA.</p>
 										</div>
 									</div>
 								</div>

@@ -8,147 +8,155 @@
 	<meta name="description" content="Health medical template project">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/styles/bootstrap4/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/styles/bootstrap4/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/js/jquery-3.3.1.min.js">
 	<link href="<?php echo base_url(); ?>/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/styles/main_styles.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/styles/responsive.css">
+
 </head>
 
 <body>
 
-	<div class="super_container">
+<div class="super_container">
 
-		<!-- Navbar -->
+<!-- Navbar -->
 
-		<div class="menu trans_500">
-			<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-				<div class="menu_close_container">
-					<div class="menu_close"></div>
-				</div>
-				<form action="#" class="menu_search_form">
-					<input type="text" class="menu_search_input" placeholder="Search" required="required">
-					<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-				</form>
-				<ul>
-				<li class="menu_item"><a href="<?php echo site_url('index'); ?>">Home</a></li>
-					<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
-					<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-					<li class="menu_item"><a href="<?php echo site_url('Keluhan'); ?>">Drug interaction checker</a></li>
-					<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
-				</ul>
+<div class="menu trans_500">
+	<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+		<div class="menu_close_container">
+			<div class="menu_close"></div>
+		</div>
+		<form action="<?php echo base_url('Welcome/hasil')?>" action="GET" id="search_container_form" class="search_container_form">
+										<input type="text" name="cari" class="search_container_input" placeholder="cari obat" required="required">
+												<button  class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+													</form>
+		<ul>
+			<li class="menu_item"><a href="<?php echo site_url('index'); ?>">Home</a></li>
+			<li class="menu_item"><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
+			<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+			<li class="menu_item"><a href="<?php echo site_url('dic'); ?>">Drug interaction checker</a></li>
+			<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
+
+
+			
+		</ul>
+
+
+	</div>
+	<div class="menu_social">
+		<ul>
+			<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+
+		</ul>
+	</div>
+</div>
+
+<!-- Home -->
+
+<div class="home" style="height:700px;width:100%; " >
+
+	<div id="demo" class="carousel slide col-md-30" data-ride="carousel" style="margin-top:60px;">
+		<ul class="carousel-indicators" style="margin-top:300px">
+			<li data-target="#demo" data-slide-to="0" class="active"></li>
+			<li data-target="#demo" data-slide-to="1"></li>
+			<li data-target="#demo" data-slide-to="2"></li>
+		</ul>
+		<!-- Ganti gambar dengan file gambar kalian -->
+		<div class="carousel-inner" style="width:100%;">
+			<div class="carousel-item active">
+				<img class="d-block w-100" src="assets/images/1.jpg" height="597">
 			</div>
-			<div class="menu_social">
-				<ul>
-					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-				</ul>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="assets/images/2.jpg" height="597">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="assets/images/3.jpg" height="597">
 			</div>
 		</div>
 
-		<!-- Home -->
-
-		<div class="home" style="height:700px">
-
-			<div id="demo" class="carousel slide col-md-30" data-ride="carousel" style="margin-top:60px;">
-				<ul class="carousel-indicators" style="margin-top:300px">
-					<li data-target="#demo" data-slide-to="0" class="active"></li>
-					<li data-target="#demo" data-slide-to="1"></li>
-					<li data-target="#demo" data-slide-to="2"></li>
-				</ul>
-				<!-- Ganti gambar dengan file gambar kalian -->
-				<div class="carousel-inner" style="width:1366px">
-					<div class="carousel-item active">
-						<img class="d-block w-100" src="assets/images/1.jpg" height="597">
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100" src="assets/images/2.jpg" height="597">
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100" src="assets/images/3.jpg" height="597">
-					</div>
-				</div>
-
-				<a class="carousel-control-prev" href="#demo" data-slide="prev">
-					<span class="carousel-control-prev-icon"></span>
-				</a>
-				<a class="carousel-control-next" href="#demo" data-slide="next">
-					<span class="carousel-control-next-icon"></span>
-				</a>
-			</div>
-
-			<!-- membuat panah next dan previous -->
-			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
+		<a class="carousel-control-prev" href="#demo" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		</a>
+		<a class="carousel-control-next" href="#demo" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		</a>
 	</div>
 
-	<!-- Header -->
+	<!-- membuat panah next dan previous -->
+	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
+</div>
 
-	<header class="header" id="header">
-		<div>
-			<div class="header_top">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
-								<div class="logo">
-									<a href="<?php echo site_url('index'); ?>" style="color:black;">PIORA<span><sup>+</sup></span></a>
-								</div>
-								<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="header_nav" id="header_nav_pin">
-				<div class="header_nav_inner">
-					<div class="header_nav_container">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
-										<nav class="main_nav">
-											<ul class="d-flex flex-row align-items-center justify-content-start">
-												<li class="active"><a href="<?php echo site_url('index'); ?>">Home</a></li>
-												<li><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
-												<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-												<li><a href="<?php echo site_url('keluhan'); ?>">Drug Interaction Checker</a></li>
-												<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
-											</ul>
-										</nav>
-										<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
-											<form action="#" id="search_container_form" class="search_container_form">
-												<input type="text" class="search_container_input" placeholder="Search" required="required">
-												<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+<!-- Header -->
 
-	<div class="home_container">
+<header class="header" id="header">
+<div>
+	<div class="header_top">
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="home_content">
-						<div class="home_title">Institut Teknologi Sumatera</div>
-						<div class="home_text">Pusat Informasi Obat ITERA.</div>
-						<!-- <div class="button home_button"><a href="#"><span>read more</span><span>read more</span></a></div> -->
+					<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+						<div class="logo">
+							<a href="<?php echo site_url('index'); ?>">PIORA<span><sup>+</sup></span></a>
+						</div>
+						<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header_nav" id="header_nav_pin">
+		<div class="header_nav_inner">
+			<div class="header_nav_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+								<nav class="main_nav">
+									<ul class="d-flex flex-row align-items-center justify-content-start">
+										<li><a href="<?php echo site_url('index'); ?>">Home</a></li>
+										<li><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
+										<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+										<li><a href="<?php echo site_url('dic'); ?>">Drug Interaction Checker</a></li>
+										<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
+										</ul>
+								</nav>
+								<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto" >
+								<form action="<?php echo base_url('Welcome/hasil')?>" action="GET" id="search_container_form" class="search_container_form">
+										<input id="textbox" name="cari" type="text" class="search_container_input" placeholder="cari obat" required="required">
+												<button id="start-btn" class="search_container_button"><i class="fa fa-microphone" aria-hidden="true"></i></button>
+													</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</header>
+
+<div class="home_container" >
+		<div class="container"style="left:6%; margin-top:60px;"  >
+			<div class="row ">
+				<div class="col">
+					<div class="home_content" >
+						<div class="home_title" >Pusat Informasi Obat ITERA</div>
+						<div class="home_text">Institut Teknologi Sumatera</div>
 					</div>
 				</div>
 			</div>
@@ -296,6 +304,8 @@
 	<script src="<?php echo base_url(); ?>/assets/plugins/easing/easing.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/plugins/parallax-js-master/parallax.min.js"></script>
 	<script src="<?php echo base_url(); ?>/assets/js/custom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="<?php echo base_url(); ?>/assets/js/script.js"></script>
 </body>
 
 </html>
