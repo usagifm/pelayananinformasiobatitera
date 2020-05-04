@@ -2,27 +2,25 @@
 <html lang="en">
 
 <head>
+<meta charset="UTF-8">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/style-admin.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/profile.css">
   <meta name="description" content="">
   <meta name="author" content="">
 
   <title>Dashboard Admin</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
 
-  <!-- Custom styles for this template -->
-  <link href="<?php echo base_url();?>assets/bootstrap/css/simple-sidebar.css" rel="stylesheet">
-  
-  <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
-  <link href="<?php echo base_url();?>/assets/styles/header-admin.css" rel="stylesheet">
-
-  <link href="<?php echo base_url();?>/assets/styles/dashboard-icon.css" rel="stylesheet">
-
-<link href="<?php echo base_url();?>/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
 
 
 </head>
@@ -30,117 +28,107 @@
 <body>
 
 
-<div class="header_top_content d-flex flex-row align-items-center justify-content-start"> 
-									<div class="logo"> 
-										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span><sup>+</sup></span></a>	 
-									</div> 
-								</div> 
-  <div class="d-flex " id="wrapper">
 
-    <!-- Sidebar -->
-    <div class="bg-secondary border-right text-light " id="sidebar-wrapper">
-    <div class="make-me-sticky">
-      <div class="sidebar-heading text-light bg-dark">Main Menu </div>
-      <div class="list-group list-group-flush text-light bg-secondary">
-        <a href="<?php echo base_url();?>admin/dashboard" class="list-group-item list-group-item-action text-light bg-secondary"><i class="fa fa-home fa-lg"></i> Dashboard</a>
-        <a href="<?php echo base_url();?>admin/artikel" class="list-group-item list-group-item-action text-light bg-secondary"><i class="fa fa-newspaper-o fa-lg"></i> Artikel</a>
-        <a href="<?php echo base_url();?>admin/obat" class="list-group-item list-group-item-action text-light bg-secondary"><i class="fa fa-th-list fa-lg"></i> Obat</a>
-        <a href="<?php echo base_url();?>admin/info" class="list-group-item list-group-item-action text-light bg-secondary"><i class="fa fa-users fa-lg"></i> Info Admin</a>
-      
-      </div>
-      </div>
+<header class="cd-main-header js-cd-main-header">
+    <div class="cd-logo-wrapper">
+    <a href="#0" class="cd-logo"><img src="<?php echo base_url();?>assets/images/cd-logo.svg" alt="Logo"></a>
     </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-
-
-    <div id="page-content-wrapper">
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-info border-bottom">
-        <button class="btn btn-primary" id="menu-toggle"><</button>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse text-light bg-info" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0 " >
-            <li class="nav-item active ">
-              <a class="nav-link text-light" href="<?php echo site_url('Welcome'); ?>">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Settings
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Account Information</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Logout</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <div class="container-fluid">
-      <div class="col-lg-12 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-  <h1 class="page-header">Halo <?php echo $this->session->userdata("nama"); ?></h1>
-  <div class="container text-center text-white">
-  <div class="row justify-content-start">
-          <div class="col-4 bg-white">
-          &nbsp;
-          &nbsp;
-          &nbsp;
-          &nbsp;
-          </div>
-          <div class="col-4 bg-white">
-          &nbsp;
-          &nbsp;
-          </div>
-        </div>
     
-
-
-
-  <h2 style=" text-align:center; color:black; margin-top:20px;"> SELAMAT DATANG DI HALAMAN ADMIN PIORA </h2>
-  <h3 style=" text-align:center; color:black; margin-top:30px; margin-bottom:200px;"> PILIH HALAMAN YANG ANDA INGINKAN </h3>
-
-    <div class="icon-wrapper">
-
-          <ul> 
-          <li><a href="<?php echo base_url();?>admin/artikel"><i class="fa fa-newspaper-o fa-lg"></i></a> </li>
-          <li><a href="<?php echo base_url();?>admin/obat"><i class="fa fa-th-list fa-lg"></i></a> </li>
-          <li><a href="<?php echo base_url();?>admin/info"><i class="fa fa-users fa-lg"></i></a> </li>
-
-
-          </ul>
-
-
-
+    <div class="cd-search js-cd-search">
+      
     </div>
+  
+    <button class="reset cd-nav-trigger js-cd-nav-trigger" aria-label="Toggle menu"><span></span></button>
+  
+    <ul class="cd-nav__list js-cd-nav__list">
+      <li class="cd-nav__item"><a href="<?php echo site_url('index'); ?>">Halaman Utama</a></li>
+      <li class="cd-nav__item"><a href="#0">Developer</a></li>
+      <li class="cd-nav__item cd-nav__item--has-children cd-nav__item--account js-cd-item--has-children">
+        <a href="<?php echo base_url(); ?>login/logout">
+        <img src="<?php echo base_url();?>assets/images/cd-avatar.svg" alt="avatar">
+          <span>Logout</span>
+        </a>
+    
+    
+      </li>
+    </ul>
+  </header> <!-- .cd-main-header -->
+  
+  <main class="cd-main-content">
 
 
  
-      </div>
-    </div>
-    <!-- /#page-content-wrapper -->
+    <nav class="cd-side-nav js-cd-side-nav">
+      <ul class="cd-side__list js-cd-side__list">
+        <li class="cd-side__label"><span>Main</span></li>
+        <li class="cd-side__item cd-side__item--has-children cd-side__item--selected ">
+          <a href="<?php echo base_url();?>admin/dashboard">Dashboard</a>
+          
+        </li>
 
+        <li class="cd-side__item cd-side__item--has-children cd-side__item--bookmarks ">
+          <a href="<?php echo base_url();?>admin/artikel">Artikel</a>
+          
+        </li>
+    
+        <li class="cd-side__item cd-side__item--has-children cd-side__item--overview ">
+          <a href="<?php echo base_url();?>admin/obat">Obat</a>
+          
+          
+        </li>
+      </ul>
+    
+      <ul class="cd-side__list js-cd-side__list">
+        <li class="cd-side__label"><span>Secondary</span></li>
+      
+    
+        <li class="cd-side__item cd-side__item--has-children cd-side__item--users ">
+          <a href="<?php echo base_url();?>admin/info">Users</a>
+          
+      
+        </li>
+      </ul>
+    
+   
+    </nav>
+
+
+
+  
+
+    <div class="main">
+
+    <div class="jumbotron">
+          <h1 id="profile-page">Selamat datang di halaman admin, <?php echo $this->session->userdata("nama"); ?> !<a class="anchorjs-link" href="#profile-page"><span class="anchorjs-icon"></span></a></h1>
+          <p> Dihalaman admin ini , hanya orang yang memiliki hak akses yang boleh menggunakannya , silahkan gunakan kebijakansanaan anda dalam menggunakan halaman dan fitur yang tersedia.
+          </p>
+        </div>
+        <div class="form-profile">
+
+      <h2 style="margin:auto; margin-top:40px;"> Bijaklah dalam menginput data , Terimakasih  </h2>
+   
   </div>
-  <!-- /#wrapper -->
+   
+</div>
+     <!-- .content-wrapper -->
+  </main> <!-- .cd-main-content -->
 
-  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+  <script src="<?php echo base_url();?>assets/js/menu-aim.js"></script>
+  <script src="<?php echo base_url();?>assets/js/main-admin.js"></script>
   <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
   <script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Menu Toggle Script -->
+ 
+
   <script>
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
   </script>
-
 </body>
 
 </html>

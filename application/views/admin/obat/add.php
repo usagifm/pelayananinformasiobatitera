@@ -127,7 +127,7 @@
 </div>
 
 <?php echo validation_errors(); ?>
-<?php echo form_open_multipart('obat/create'); ?>
+<?php echo form_open_multipart('Obat/create'); ?>
 
 
   <h2>Tambah Obat</h2>

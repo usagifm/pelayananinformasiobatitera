@@ -107,7 +107,7 @@
             <form method="POST" action="<?php echo base_url() ?>index.php/Obat/upload" enctype="multipart/form-data">
            
                 <label for="exampleInputEmail1" style="margin-bottom:30px;">UNGGAH FILE EXCEL</label>
-                <input  type="file" name="userfile" data-role="file"data-prepend="Pilih foto artikel"  >
+                <input  type="file" name="userfile" data-role="file"data-prepend="Pilih File Excel"  >
                 
 
       
@@ -147,7 +147,7 @@
        style=" font-size:16px">
       <thead>
         <tr>
-          <th>ID</th>
+          <th>No</th>
           <th>Nama Obat</th>
           <th>Merek Dagang</th>
           <th>Penulis</th>
@@ -181,6 +181,7 @@
   </div>
 </div>
 
+
 <?php foreach ($data->result_array() as $i) :
               $id_obat=$i['id_obat'];
               $nama_generik=$i['nama_generik'];
@@ -192,7 +193,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus Berita</h4>
+                        <h4 class="modal-title" id="myModalLabel">Hapus Obat</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'obat/delete/'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -205,6 +206,10 @@
                         <button type="submit" class="btn btn-primary btn-flat" id="simpan">Hapus</button>
                     </div>
                     </form>
+
+                    </div>
+            </div>
+        </div>
       
 	<?php endforeach;?>
     <!-- /#page-content-wrapper -->
