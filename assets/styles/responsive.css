@@ -87,9 +87,7 @@
 	{
 		margin-left: 54px;
 	}
-
-
-
+}
 
 /************
 4. 1100px
@@ -125,7 +123,6 @@
 		position: fixed;
 		top: 0px;
 		left: 0;
-		background-color: #32c69a;
 	}
 	.header_top_extra,
 	.header_nav
@@ -178,23 +175,6 @@
 	{
 		margin-bottom: 7px;
 	}
-
-	.logo a span{
-		
-		color: rgb(255, 187, 15);
-
-	}
-	.logo a{
-
-		color: rgb(255, 255, 255);
-	}
-
-
-	.ibu-bungkus {
-
-		width: 80%;
-		
-	}
 }
 
 /************
@@ -234,17 +214,6 @@
 	{
 		display: none;
 	}
-	.gol-obat {
-
-		left: 80%;
-	}
-
-
-	.ibu-bungkus {
-
-		width: 95%;
-		
-	}
 }
 
 /************
@@ -252,10 +221,7 @@
 ************/
 
 @media only screen and (max-width: 575px)
-
 {
-
-	
 	p
 	{
 		font-size: 13px;
@@ -284,16 +250,12 @@
 	}
 	.home_title
 	{
-		margin-top:50px;
-		font-size: 26px;
-		margin-left: 10px;
-	
+		font-size: 36px;
 	}
 	.home_text
 	{
 		font-size: 14px;
 		max-width: 100%;
-		margin-left: 10px;
 	}
 	.info_text
 	{
@@ -325,17 +287,6 @@
 	{
 		margin-left: 0;
 		margin-top: 40px;
-	}
-
-	.gol-obat {
-
-		left: 80%;
-	}
-
-	.ibu-bungkus {
-
-		width: 90%;
-		
 	}
 }
 
