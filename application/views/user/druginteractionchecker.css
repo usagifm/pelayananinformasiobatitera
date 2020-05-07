@@ -1,0 +1,43 @@
+.pembungkus {
+
+width: 40%;
+height: auto;
+margin: auto;
+background-color: beige;
+overflow: hidden;
+
+padding:10px;
+border-radius: 5px;
+
+}
+
+
+.floatLeft { width:40%; float: left; 
+}
+
+.floatLeft li{
+
+    background-color: darkgrey;
+    padding:5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    list-style-type:none;
+    margin-left:-40%;
+
+}
+   
+
+.floatRight {width: 60%; float: right; 
+}
+
+.floatRight li{
+
+    background-color: rgb(231, 231, 231);
+    padding:5px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    list-style-type:none;
+    margin-left:-10%;
+
+
+}
