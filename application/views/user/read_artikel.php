@@ -23,25 +23,20 @@
 	<div class="menu trans_500">
 		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
 			<div class="menu_close_container"><div class="menu_close"></div></div>
-			<form action="#" class="menu_search_form">
-				<input type="text" class="menu_search_input" placeholder="Search" required="required">
-				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-			</form>
+			
 			<ul>
-				<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
-				<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
+			<li class="menu_item"><a href="<?php echo site_url('index'); ?>">Home</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-				<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('dic'); ?>">Drug interaction checker</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
+			
 			</ul>
 		</div>
 		<div class="menu_social">
 			<ul>
-				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
 				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 			</ul>
 		</div>
@@ -62,7 +57,7 @@
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 									<div class="logo">
-										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
+										<a href="<?php echo site_url('Welcome'); ?>">PIORA<sup>+</sup></a>	
 									</div>
 									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 								</div>
@@ -79,19 +74,16 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li class="active"><a href="<?php echo site_url('index'); ?>">Home</a></li>
+													<li ><a href="<?php echo site_url('index'); ?>">Home</a></li>
 													<li><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
 													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-													<li><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+													<li><a href="<?php echo site_url('dic'); ?>">Drug interaction checker</a></li>
 													<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
-												</ul>
+														</ul>
 											</nav>
-											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
-												<form action="#" id="search_container_form" class="search_container_form">
-													<input type="text" class="search_container_input" placeholder="Search" required="required">
-													<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-												</form>
-											</div>
+											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto" > 
+										
+										</div>
 										</div>
 									</div>
 								</div>
@@ -129,22 +121,41 @@
 							$judul=$key['judul'];
 							$create_at=$key['create_at'];
 							$body=$key['body'];
+							$pecah = explode("\r\n\r\n", $body);
+							$text = "";
 							$gambar=$key['gambar'];
+
 							?>
+
+							<?php
+
+							for ($i=0; $i<=count($pecah)-1; $i++)
+								{
+  								 $part = str_replace($pecah[$i], "<p>".$pecah[$i]."</p>", $pecah[$i]);
+  								 $text .= $part;
+									}
+
+							
+										echo $gambar;
+
+							?>
+
+							
 							<div class="news_post">
-							<div class="news_post_image"><img src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""> </div>
+							<div class="news_post_image"><img height="420px" width="700px" src="<?php echo base_url('assets/images/posts/' . $gambar);?>" alt=""> </div>
+								
 							<div class="news_post_content">
 								<div class="news_post_title"><a><?php echo $judul ?></a></div>
 								<div class="news_post_date"><a href=""><?php echo $create_at ?></a></div>								
 								<div class="news_post_info">
 								</div>
-								<div class="news_post_text">
-									<p><?php echo $body ?> </p>
+								<div class="news_post_text" style="text-align: justify;">
+									<p><?php echo $text ?> </p>
 								</div>
 							</div>
 						</div>
 
-						<? php endforeach ?>
+						
 						
 						<!-- News Post -->
 						
@@ -166,7 +177,7 @@
 					<div class="col-lg-3 footer_col">
 						<div class="footer_about">
 							<div class="logo">
-								<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
+								<a href="<?php echo site_url('index'); ?>">PIORA<span>+</span></a>	
 							</div>
 							<div class="footer_about_text">Pusat Informasi Obat ITERA.</div>
 							<div class="footer_social">

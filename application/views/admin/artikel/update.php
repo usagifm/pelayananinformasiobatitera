@@ -1,60 +1,129 @@
-<!-- Tampilkan halaman Dashboard -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="<?php echo base_url();?>/assets/images/Logo PIO.png">
+<meta charset="UTF-8">
 
-    <title>Administrator PIORA</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url();?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+ 
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <!-- Custom styles for this template -->
-    <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
+  <title>Dashboard Admin</title>
 
-    <!-- font-awesome untuk ikon -->
-    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS -->
 
-  </head>
 
-  <body>
 
-    <nav><?php include 'template/navbar.php'; ?></nav>
 
-    <div class="container-fluid">
-      <div class="row">
-          <aside>
-              <?php $home = "class='active'"; ?>
-              <?php include 'template/sidebar.php'; ?>
-          </aside>
+</head>
 
-          <section id="konten">
-          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-  <h1 class="page-header">Halo <?php echo $this->session->userdata("nama"); ?></h1>
+<body>
 
-  <div class="container top">
+<link href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<ul class="breadcrumb">
-  <li>
-    <a href="<?php echo site_url("admin"); ?>">
-      <?php echo ucfirst($this->uri->segment(1));?>
-    </a> 
-    <span class="divider"></span>
-  </li>
-  <li class="active">
-    <?php echo ucfirst($this->uri->segment(2));?>
-  </li>
+<link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/style-admin.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/profile.css">
+
+
+  <header class="cd-main-header js-cd-main-header">
+    <div class="cd-logo-wrapper">
+    <a href="#0" class="cd-logo"><img src="<?php echo base_url();?>assets/images/cd-logo.svg" alt="Logo"></a>
+    </div>
+    
+    <div class="cd-search js-cd-search">
+      
+    </div>
+  
+    <button class="reset cd-nav-trigger js-cd-nav-trigger" aria-label="Toggle menu"><span></span></button>
+  
+    <ul class="cd-nav__list js-cd-nav__list">
+      <li class="cd-nav__item"><a href="<?php echo site_url('index'); ?>">Halaman Utama</a></li>
+      <li class="cd-nav__item"><a href="#0">Developer</a></li>
+      <li class="cd-nav__item cd-nav__item--has-children cd-nav__item--account js-cd-item--has-children">
+        <a href="<?php echo base_url(); ?>login/logout">
+        <img src="<?php echo base_url();?>assets/images/cd-avatar.svg" alt="avatar">
+          <span>Logout</span>
+        </a>
+    
+    
+      </li>
+    </ul>
+  </header> <!-- .cd-main-header -->
+  
+  <main class="cd-main-content">
+
+
+ <nav class="cd-side-nav js-cd-side-nav">
+      <ul class="cd-side__list js-cd-side__list">
+        <li class="cd-side__label"><span>Main</span></li>
+        <li class="cd-side__item cd-side__item--has-children ">
+          <a href="<?php echo base_url();?>admin/dashboard">Dashboard</a>
+          
+        </li>
+
+        <li class="cd-side__item cd-side__item--has-children cd-side__item--bookmarks cd-side__item--selected ">
+          <a href="<?php echo base_url();?>admin/artikel">Artikel</a>
+          
+        </li>
+    
+        <li class="cd-side__item cd-side__item--has-children cd-side__item--overview ">
+          <a href="<?php echo base_url();?>admin/obat">Obat</a>
+          
+          
+        </li>
+      </ul>
+    
+      <ul class="cd-side__list js-cd-side__list">
+        <li class="cd-side__label"><span>Secondary</span></li>
+      
+    
+        <li class="cd-side__item cd-side__item--has-children cd-side__item--users ">
+          <a href="<?php echo base_url();?>admin/info">Users</a>
+          
+      
+        </li>
+      </ul>
+    
+    
+    </nav>
+
+
+
+  
+
+    <div class="main">
+
+        <div class="form-profile ">
+   
+  
+  <aside>
+          <?php $home = "class='active'"; ?>
+        
+      </aside>
+
+  <div class="container-fluid">
+ 
+
+
+  <ul class="breadcrumb" style="font-size:15px;">
+<li>
+<a style="text-decoration:none; color:black;" href="<?php echo site_url("admin"); ?>">
+  <?php echo ucfirst($this->uri->segment(1));?>
+</a> 
+<span class="divider"> / </span>
+
+</li>
+<li class="active"> <?php echo ucfirst($this->uri->segment(2));?>
+</li>
 </ul>
 
-<div class="page-header users-header">
-  
-</div>
 
 <?php echo validation_errors(); ?>
 <div class="col-sm-9">
@@ -71,15 +140,15 @@
     <div class="form-group">
     <label>Title</label>
     <input type="hidden" name="id_artikel" value="<?php echo "$id_artikel"; ?>">
-    <input type="text" class="form-control" name="judul"  placeholder="Add Title" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')" value="<?php echo "$judul"; ?>"/>
+    <input type="text" name="judul"  placeholder="Add Title" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')" value="<?php echo "$judul"; ?>"/>
   </div>
   <div class="form-group">
     <label>Body</label>
-    <textarea id="ckeditor" class="form-control" name="body"  placeholder="Add Body" rows="16" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"><?php echo "$body"; ?></textarea>
+    <textarea id="ckeditor" name="body"  placeholder="Add Body" rows="16" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"><?php echo "$body"; ?></textarea>
   </div>
   <div class="form-group">
     <label>Category</label>
-    <select name="kategori" class="form-control">
+    <select name="kategori" >
               <option value="Herbal">Herbal</option>
               <option value="Technology">Technology</option>
           </select>
@@ -92,16 +161,38 @@
   
      
 
-          </section>
+    <!-- /#page-content-wrapper -->
 
-      </div>
-    </div>
+  </div>
+  <!-- /#wrapper -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo base_url();?>/assets/bootstrap/js/jquery.js"></script>
-    <script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
+
+  </div>
+
+
+
+   
+</div>
+     <!-- .content-wrapper -->
+  </main> <!-- .cd-main-content -->
+
+  <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+  <script src="<?php echo base_url();?>assets/js/menu-aim.js"></script>
+  <script src="<?php echo base_url();?>assets/js/main-admin.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
+  <script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>/assets/bootstrap/js/holder.js"></script>
-  </body>
+
+  <!-- Menu Toggle Script -->
+ 
+
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+</body>
+
 </html>

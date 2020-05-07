@@ -1,49 +1,153 @@
-<!-- Tampilkan halaman Dashboard -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="<?php echo base_url();?>/assets/images/Logo PIO.png">
+<meta charset="UTF-8">
 
-    <title>Administrator PIORA</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url();?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+ 
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <!-- Custom styles for this template -->
-    <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
+  <title>Dashboard Admin</title>
 
-    <!-- font-awesome untuk ikon -->
-    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS -->
 
-  </head>
 
-  <body>
 
-    <nav><?php include 'template/navbar.php'; ?></nav>
 
-    <div class="container-fluid">
-      <div class="row">
-          <aside>
-              <?php $home = "class='active'"; ?>
-              <?php include 'template/sidebar.php'; ?>
-          </aside>
 
-          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-  <h2 class="sub-header">Semua Obat <a href="<?php echo base_url();?>admin/obat/add" class="btn btn-success pull-right"><i class="fa fa-plus-circle fa-lg"></i> Tambah Obat</a></h2>
-  <div class="table-responsive">
-  <?php if($this->session->flashdata('message', 'Data berhasil diperbarui')): ?>
+</head>
+
+<body>
+
+<link href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/style-admin.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/profile.css">
+
+
+  <header class="cd-main-header js-cd-main-header">
+    <div class="cd-logo-wrapper">
+    <a href="#0" class="cd-logo"><img src="<?php echo base_url();?>assets/images/cd-logo.svg" alt="Logo"></a>
+    </div>
+    
+    <div class="cd-search js-cd-search">
+      
+    </div>
+  
+    <button class="reset cd-nav-trigger js-cd-nav-trigger" aria-label="Toggle menu"><span></span></button>
+  
+    <ul class="cd-nav__list js-cd-nav__list">
+      <li class="cd-nav__item"><a href="<?php echo site_url('index'); ?>">Halaman Utama</a></li>
+      <li class="cd-nav__item"><a href="#0">Developer</a></li>
+      <li class="cd-nav__item cd-nav__item--has-children cd-nav__item--account js-cd-item--has-children">
+        <a href="<?php echo base_url(); ?>login/logout">
+        <img src="<?php echo base_url();?>assets/images/cd-avatar.svg" alt="avatar">
+          <span>Logout</span>
+        </a>
+    
+    
+      </li>
+    </ul>
+  </header> <!-- .cd-main-header -->
+  
+  <main class="cd-main-content">
+
+
+ <nav class="cd-side-nav js-cd-side-nav">
+      <ul class="cd-side__list js-cd-side__list">
+        <li class="cd-side__label"><span>Main</span></li>
+        <li class="cd-side__item cd-side__item--has-children ">
+          <a href="<?php echo base_url();?>admin/dashboard">Dashboard</a>
+          
+        </li>
+
+        <li class="cd-side__item cd-side__item--has-children cd-side__item--bookmarks ">
+          <a href="<?php echo base_url();?>admin/artikel">Artikel</a>
+          
+        </li>
+    
+        <li class="cd-side__item cd-side__item--has-children cd-side__item--overview  cd-side__item--selected ">
+          <a href="<?php echo base_url();?>admin/obat">Obat</a>
+          
+          
+        </li>
+      </ul>
+    
+      <ul class="cd-side__list js-cd-side__list">
+        <li class="cd-side__label"><span>Secondary</span></li>
+      
+    
+        <li class="cd-side__item cd-side__item--has-children cd-side__item--users ">
+          <a href="<?php echo base_url();?>admin/info">Users</a>
+          
+      
+        </li>
+      </ul>
+    
+    </nav>
+
+
+
+  
+
+    <div class="main">
+
+    
+    <div class="form-profile ">
+   
+ 
+            <?php echo $this->session->flashdata('notif') ?>
+            <form method="POST" action="<?php echo base_url() ?>index.php/Obat/upload" enctype="multipart/form-data">
+           
+                <label for="exampleInputEmail1" style="margin-bottom:30px;">UNGGAH FILE EXCEL</label>
+                <input  type="file" name="userfile" data-role="file"data-prepend="Pilih File Excel"  >
+                
+
+      
+              <button type="submit" class="btn btn-success" style="margin-top:30px;">UPLOAD</button>
+
+            </form>
+
+            <button class="image-button right " style="margin-left:915px; margin-top:-70px;" >
+        <a href="<?php echo base_url();?>assets/template-import.xlsx" style="text-decoration:none; color:black; " download>
+          <span class="mif-download icon"></span>
+          <span class="caption">Template Excel</span>
+      </a>
+      </button>
+
+</div>
+
+
+
+        <div class="form-profile ">
+   
+        
+
+
+      <h2 class="sub-header"> Semua Obat<button class="image-button right " style="margin-left:65%;" >
+        <a href="<?php echo base_url();?>admin/obat/add" style="text-decoration:none; color:black; " >
+          <span class="mif-add icon"></span>
+          <span class="caption">Tambah Obat</span>
+      </a>
+      </button></h2>  
+      <?php if($this->session->flashdata('message', 'Data berhasil diperbarui')): ?>
   <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('message', 'Data berhasil diperbarui').'</p>'; ?>
                     <?php endif; ?>
-    <table class="table table-striped">
+                    <table class="table striped table-border mt-4"
+       data-role="table"
+     
+       data-horizontal-scroll="false"
+       style=" font-size:16px">
       <thead>
         <tr>
-          <th>#</th>
+          <th>No</th>
           <th>Nama Obat</th>
           <th>Merek Dagang</th>
           <th>Penulis</th>
@@ -77,6 +181,7 @@
   </div>
 </div>
 
+
 <?php foreach ($data->result_array() as $i) :
               $id_obat=$i['id_obat'];
               $nama_generik=$i['nama_generik'];
@@ -88,7 +193,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus Berita</h4>
+                        <h4 class="modal-title" id="myModalLabel">Hapus Obat</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'obat/delete/'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -101,15 +206,35 @@
                         <button type="submit" class="btn btn-primary btn-flat" id="simpan">Hapus</button>
                     </div>
                     </form>
-                </div>
+
+                    </div>
             </div>
         </div>
+      
 	<?php endforeach;?>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo base_url();?>/assets/bootstrap/js/jquery.js"></script>
-    <script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+     <!-- .content-wrapper -->
+  </main> <!-- .cd-main-content -->
+
+  <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+  <script src="<?php echo base_url();?>assets/js/menu-aim.js"></script>
+  <script src="<?php echo base_url();?>assets/js/main-admin.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
+  <script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>/assets/bootstrap/js/holder.js"></script>
-  </body>
+
+  <!-- Menu Toggle Script -->
+ 
+
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+</body>
+
 </html>

@@ -1,21 +1,43 @@
-<div class="navbar-default navbar-nav navbar-fixed-top" role="navigation">
-  <div class="container-fluid" style="background:#32c69a;">
-    <div class="main_nav">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><i class="fa fa-wrench"></i> Administrator PIORA</a>
-    </div>
-    <div class="navbar-collapse collapse">
+    <!-- Bootstrap core CSS -->
+    <link href="<?php echo base_url();?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="<?php echo base_url();?>admin/artikel/add"><i class="fa fa-pencil"></i> Tulis Artikel</a></li>
-       <!-- <li><a href="#"><i class="fa fa-user"></i> <?php echo $_SESSION['username']; ?></a></li> -->
-        <li><a href="<?php echo base_url(); ?>login/logout" title="Log out!"><i class="fa fa-sign-out"></i> Logout</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+    <!-- Custom styles for this template -->
+    <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
+
+    <!-- font-awesome untuk ikon -->
+    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+  <?php foreach ($data->result_array() as $i) :
+              $id_artikel=$i['id_artikel'];
+              $judul=$i['judul'];
+              $id_admin=$i['id_admin'];
+            ?>
+ 
+
+  <!--Modal Hapus Pengguna-->
+  
+        <div class="modal fade" id="ModalHapus<?php echo $id_artikel;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
+                        <h4 class="modal-title" id="myModalLabel">Hapus Artikel</h4>
+                    </div>
+                    <form class="form-horizontal" action="<?php echo base_url().'posts/delete/'?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+							       <input type="hidden" name="id_artikel" value="<?php echo $id_artikel;?>"/>
+                            <p>Apakah Anda yakin mau menghapus Artikel <b><?php echo $judul;?></b> ?</p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary btn-flat" id="simpan">Hapus</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+  <?php endforeach;?>
+
+  <script src="<?php echo base_url();?>/assets/bootstrap/js/jquery.js"></script>
+    <script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
