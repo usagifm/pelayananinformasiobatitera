@@ -36,4 +36,8 @@ class Admin_obat extends CI_Controller {
 		$this->load->view('admin/obat/add');
 
 	}
+
+
+
+	
 }

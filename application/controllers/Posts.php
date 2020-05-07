@@ -3,6 +3,10 @@
 public function __construct()
 {
 	parent::__construct();
+		if($this->session->userdata('status') != "login"){
+            $url=base_url('admin');
+            redirect($url);
+        };
 	$this->load->model('post_model');
 	$this->load->helper('url_helper');
 }

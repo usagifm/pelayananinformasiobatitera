@@ -43,6 +43,8 @@ class Admin extends CI_Controller{
 			'password' => md5($password)
 			);
 		$user_id = $this->admin_model->cek_login("admin",$where)->num_rows();
+		// $sesi= $this->admin_model->ambil_id($username);
+				
 		if($user_id > 0){
  
 			$data_session = array(

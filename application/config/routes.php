@@ -79,6 +79,7 @@ $route['keterangan/(:any)'] = 'keterangan/index/$1';
 
 $route['default_controller'] = 'Welcome';
 
+
 $route['index'] = 'Welcome';
 
 $route['keterangan/(:any)'] = 'keterangan/index/$1';
