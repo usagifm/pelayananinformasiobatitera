@@ -1,128 +1,52 @@
+<!-- Tampilkan halaman Dashboard -->
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="<?php echo base_url();?>/assets/images/Logo PIO.png">
 
+    <title>Administrator PIORA</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
- 
-  <script>document.getElementsByTagName("html")[0].className += " js";</script>
-  
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <!-- Bootstrap core CSS -->
+    <link href="<?php echo base_url();?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <title>Dashboard Admin</title>
+    <!-- Custom styles for this template -->
+    <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
 
-  <!-- Bootstrap core CSS -->
-  <!-- Bootstrap core CSS -->
+    <!-- font-awesome untuk ikon -->
+    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
+  </head>
 
+  <body>
 
+    <nav><?php include 'template/navbar.php'; ?></nav>
 
-</head>
+    <div class="container-fluid">
+      <div class="row">
+          <aside>
+              <?php $home = "class='active'"; ?>
+              <?php include 'template/sidebar.php'; ?>
+          </aside>
 
-<body>
-
-<link href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/style-admin.css">
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/profile.css">
-
-
-  <header class="cd-main-header js-cd-main-header">
-    <div class="cd-logo-wrapper">
-    <a href="#0" class="cd-logo"><img src="<?php echo base_url();?>assets/images/cd-logo.svg" alt="Logo"></a>
-    </div>
-    
-    <div class="cd-search js-cd-search">
-      
-    </div>
-  
-    <button class="reset cd-nav-trigger js-cd-nav-trigger" aria-label="Toggle menu"><span></span></button>
-  
-    <ul class="cd-nav__list js-cd-nav__list">
-      <li class="cd-nav__item"><a href="<?php echo site_url('index'); ?>">Halaman Utama</a></li>
-      <li class="cd-nav__item"><a href="#0">Developer</a></li>
-      <li class="cd-nav__item cd-nav__item--has-children cd-nav__item--account js-cd-item--has-children">
-        <a href="<?php echo base_url(); ?>login/logout">
-        <img src="<?php echo base_url();?>assets/images/cd-avatar.svg" alt="avatar">
-          <span>Logout</span>
-        </a>
-    
-    
-      </li>
-    </ul>
-  </header> <!-- .cd-main-header -->
-  
-  <main class="cd-main-content">
-
-
- <nav class="cd-side-nav js-cd-side-nav">
-      <ul class="cd-side__list js-cd-side__list">
-        <li class="cd-side__label"><span>Main</span></li>
-        <li class="cd-side__item cd-side__item--has-children ">
-          <a href="<?php echo base_url();?>admin/dashboard">Dashboard</a>
-          
-        </li>
-
-        <li class="cd-side__item cd-side__item--has-children cd-side__item--bookmarks">
-          <a href="<?php echo base_url();?>admin/artikel">Artikel</a>
-          
-        </li>
-    
-        <li class="cd-side__item cd-side__item--has-children cd-side__item--overview ">
-          <a href="<?php echo base_url();?>admin/obat">Obat</a>
-          
-          
-        </li>
-      </ul>
-    
-      <ul class="cd-side__list js-cd-side__list">
-        <li class="cd-side__label"><span>Secondary</span></li>
-      
-    
-        <li class="cd-side__item cd-side__item--has-children cd-side__item--users  cd-side__item--selected ">
-          <a href="<?php echo base_url();?>admin/info">Users</a>
-          
-      
-        </li>
-      </ul>
-    
-      
-    </nav>
-
-
-
-  
-
-    <div class="main">
-
-        <div class="form-profile ">
-
-        
-      <h2 class="sub-header"> Semua Admin<button class="image-button right " style="margin-left:65%;" >
-        <a href="<?php echo base_url();?>admin/info/add" style="text-decoration:none; color:black; " >
-          <span class="mif-add icon"></span>
-          <span class="caption">Tambah Admin</span>
-      </a>
-      </button></h2> 
-   
-        <?php if($this->session->flashdata('message', 'Data berhasil diperbarui')): ?>
+          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h2 class="sub-header">Admin <a href="<?php echo base_url();?>admin/info/add" class="btn btn-success pull-right"><i class="fa fa-plus-circle fa-lg"></i> Admin Baru</a></h2>
+  <div class="table-responsive">
+  <?php if($this->session->flashdata('message', 'Data berhasil diperbarui')): ?>
   <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('message', 'Data berhasil diperbarui').'</p>'; ?>
                     <?php endif; ?>
-                    <table class="table striped table-border mt-4"
-       data-role="table"
-     
-       data-horizontal-scroll="false"
-       style=" font-size:16px">
+ 
+    <table class="table table-striped">
       <thead>
         <tr>
           <th>#</th>
           <th>Username</th>
-          <th>Email</th>
+          <th>Password</th>
           <th>Aksi</th>
         </tr>
       </thead>
@@ -132,13 +56,13 @@
           					foreach ($data->result_array() as $i) :
           					   $no++;
           					   $username=$i['username'];
-                       $email=$i['email'];
+                       $password=$i['password'];
                        $id_admin=$i['id_admin'];
                     ?>
                 <tr>
                   <td><?php echo $no;?></td>
                   <td><?php echo $username;?></td>
-        				  <td><?php echo $email;?></td>
+        				  <td><?php echo $password;?></td>
                   <td style="text-align:left;">
                         <!-- <?php echo base_url().'admin_artikel/edit'.$id_artikel;?> -->
                         <a class="btn" href="<?php echo base_url().'info_admin/edit/'.$id_admin;?>" ><span class="fa fa-pencil"></span></a>
@@ -155,7 +79,7 @@
 
 <?php foreach ($data->result_array() as $i) :
               $username=$i['username'];
-              $email=$i['email'];
+              $password=$i['password'];
               $id_admin=$i['id_admin']
             ?>
 	<!--Modal Hapus Pengguna-->
@@ -181,31 +105,12 @@
             </div>
         </div>
 	<?php endforeach;?>
-                      </div>
-    
-    <!-- /#page-content-wrapper -->
 
-  
-     <!-- .content-wrapper -->
-  </main> <!-- .cd-main-content -->
-
-  <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
-  <script src="<?php echo base_url();?>assets/js/menu-aim.js"></script>
-  <script src="<?php echo base_url();?>assets/js/main-admin.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="<?php echo base_url();?>/assets/bootstrap/js/jquery.js"></script>
+    <script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>/assets/bootstrap/js/holder.js"></script>
-
-  <!-- Menu Toggle Script -->
- 
-
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
-</body>
-
+  </body>
 </html>
